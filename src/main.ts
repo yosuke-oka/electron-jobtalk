@@ -1,5 +1,4 @@
 import { app, BrowserWindow } from 'electron'
-import { menubar } from 'menubar'
 import { resolve } from 'path'
 
 class Test {
