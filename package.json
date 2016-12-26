@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "main": "main.js",
   "license": "MIT",
+  "scripts": {
+    "start": "electron ."
+  },
   "dependencies": {
-    "typescript": "^2.1.4",
-    "electron-prebuilt": "^1.4.13"
+    "@types/electron": "^1.4.30",
+    "electron-prebuilt": "^1.4.13",
+    "menubar": "^5.2.0",
+    "typescript": "^2.1.4"
   }
 }
