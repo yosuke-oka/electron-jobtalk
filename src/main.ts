@@ -1,5 +1,6 @@
 import { app, BrowserWindow } from 'electron'
 import { menubar } from 'menubar'
+import { resolve } from 'path'
 
 class Test {
     mainWindow: Electron.BrowserWindow = null
@@ -15,17 +16,16 @@ class Test {
 
     onReady = () => {
         this.mainWindow = new BrowserWindow({
-            width: 800,
-            height: 600,
+            width: 1000,
+            height: 800,
         })
 
-        this.mainWindow.loadURL('https://jobtalk.jp')
+        this.mainWindow.loadURL('file://' + resolve('./static/index.html'))
         this.mainWindow.on('closed', () => {
             this.mainWindow = null
         })
 
     }
 }
-
 
 const testApp = new Test(app)
