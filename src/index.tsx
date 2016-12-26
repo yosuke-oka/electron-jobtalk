@@ -1,6 +1,21 @@
 import * as React from 'react'
 import * as ReactDom from 'react-dom'
-import App from './App'
+import docReady from 'doc-ready'
 
-ReactDom.render(<App />, document.getElementById('app'))
+const App = () => {
+    return (
+        <div>
+            <div>ほげ</div>
+            { /*<webview id="mainWebView" src="https://jobtalk.jp" autosize="on" /> */}
+        </div>
+    )
+}
+
+export default function(){
+   docReady( () => {
+       ReactDom.render(<App />, document.getElementById('app'))
+   })
+}
+
+console.log('read')
 

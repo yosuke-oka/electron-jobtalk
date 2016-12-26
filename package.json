@@ -12,6 +12,7 @@
     "@types/electron": "^1.4.30",
     "@types/react": "^0.14.55",
     "@types/react-dom": "^0.14.19",
+    "doc-ready": "^1.0.4",
     "electron-packager": "^8.4.0",
     "electron-prebuilt": "^1.4.13",
     "react": "^15.4.1",
