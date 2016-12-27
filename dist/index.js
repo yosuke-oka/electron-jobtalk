@@ -1,17 +1,19 @@
 "use strict";
 const React = require("react");
 const ReactDom = require("react-dom");
-const doc_ready_1 = require("doc-ready");
+//import KuchikomiLink from './kuchikomiLink'
+const webViewStyle = {
+    position: 'relative',
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+};
 const App = () => {
     return (React.createElement("div", null,
-        React.createElement("div", null, "\u307B\u3052")));
+        React.createElement("a", { href: "https://jobtalk.jp/answer/post.html" }, "\u53E3\u30B3\u30DF\u6295\u7A3F"),
+        React.createElement("div", { style: webViewStyle },
+            React.createElement("webview", { id: "mainWebView", src: "https://jobtalk.jp" }))));
 };
-function default_1() {
-    doc_ready_1.default(() => {
-        ReactDom.render(React.createElement(App, null), document.getElementById('app'));
-    });
-}
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = default_1;
-console.log('read');
+ReactDom.render(React.createElement(App, null), document.getElementById('app'));
 //# sourceMappingURL=index.js.map

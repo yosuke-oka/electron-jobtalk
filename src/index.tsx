@@ -1,21 +1,25 @@
 import * as React from 'react'
 import * as ReactDom from 'react-dom'
-import docReady from 'doc-ready'
+//import KuchikomiLink from './kuchikomiLink'
+
+const webViewStyle = {
+    position: 'relative',
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+}
 
 const App = () => {
     return (
         <div>
-            <div>ほげ</div>
-            { /*<webview id="mainWebView" src="https://jobtalk.jp" autosize="on" /> */}
+            <a href="https://jobtalk.jp/answer/post.html">口コミ投稿</a>
+            <div style={webViewStyle}>
+                <webview id="mainWebView" src="https://jobtalk.jp" />
+            </div>
         </div>
     )
 }
 
-export default function(){
-   docReady( () => {
-       ReactDom.render(<App />, document.getElementById('app'))
-   })
-}
-
-console.log('read')
+ReactDom.render(<App />, document.getElementById('app'))
 

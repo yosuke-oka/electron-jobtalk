@@ -1,8 +1,13 @@
-import { app, BrowserWindow } from 'electron'
+import { app, BrowserWindow, Tray, nativeImage, Menu } from 'electron'
 import { resolve } from 'path'
 
 class Test {
     mainWindow: Electron.BrowserWindow = null
+    trayIcon: Electron.Tray = null
+
+    contextMenu: Electron.Menu = Menu.buildFromTemplate([
+        {label: 'hoge', type: 'radio'}
+    ])
 
     constructor(public app: Electron.App){
         this.app.on('window-all-closed', this.onWindowAllClosed)
@@ -22,6 +27,13 @@ class Test {
         this.mainWindow.loadURL('file://' + resolve('./static/index.html'))
         this.mainWindow.on('closed', () => {
             this.mainWindow = null
+        })
+
+        this.trayIcon = new Tray(nativeImage.createFromPath(resolve('./static/tk_icon.png')))
+
+        this.trayIcon.setContextMenu(this.contextMenu)
+        this.trayIcon.on('clicked', () => {
+            this.mainWindow.focus()
         })
 
     }
